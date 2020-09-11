@@ -1,0 +1,45 @@
+.container {
+    background-size: cover;
+}
+.img-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.btn-start {
+    position: absolute;
+    top: 400px;
+    left: 650px;
+    display: inline-block;
+    color: black;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border-radius: 7px; 
+    transition: box-shadow .3s, border-color .3s;
+    background-color: white;
+    border: none;
+    opacity: 0.6;
+}
+.btn-start:hover {
+    background-color: rgba(107, 180, 92, 0.877);
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 50px;
+}
+.footer {
+    position: absolute;
+}
+.footer-support {
+    background-color: black;
+    color: white;
+    top: 1000px;
+    align-items: center;
+}

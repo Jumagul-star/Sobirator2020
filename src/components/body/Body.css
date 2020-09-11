@@ -1,0 +1,106 @@
+.waste {
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-waste {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.img-sorts, .img-res {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+
+.btn-waste {
+    position: absolute;
+    top: 400px;
+    left: 650px;
+    display: inline-block;
+    color: black;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border-radius: 7px; 
+    transition: box-shadow .3s, border-color .3s;
+    background-color: white;
+    border: none;
+    opacity: 0.6;
+}
+
+.btn-waste:hover {
+    background-color: rgb(12, 63, 63);
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 50px;
+}
+
+.btn-sorts {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+    display: inline-block;
+    color: black;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border-radius: 7px; 
+    transition: box-shadow .3s, border-color .3s;
+    background-color: white;
+    border: none;
+    opacity: 0.6;
+}
+
+.btn-sorts:hover {
+    background-color: rgb(209, 197, 21);
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 50px;
+}
+
+.btn-res {
+    position: absolute;
+    top: 300px;
+    left: 650px;
+    display: inline-block;
+    color: black;
+    font-size: 125%;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .25em .5em;
+    outline: none;
+    border-radius: 7px; 
+    transition: box-shadow .3s, border-color .3s;
+    background-color: white;
+    border: none;
+    opacity: 0.6;
+}
+
+.btn-res:hover {
+    background-color: rgb(172, 32, 7);
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    border-radius: 50px;
+}

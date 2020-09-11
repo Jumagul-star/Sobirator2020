@@ -1,0 +1,80 @@
+{
+  "posts": [
+    {
+      "id": 1599626596437,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Макулатура",
+      "amount": "5",
+      "note": ""
+    },
+    {
+      "id": 1599651650671,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Стекло",
+      "amount": "5",
+      "note": "qwertyu"
+    },
+    {
+      "id": 1599652895064,
+      "surname": "Zikirova111",
+      "name": "Jumagul111",
+      "waste": "Стекло",
+      "amount": "111",
+      "note": "111"
+    },
+    {
+      "id": 1599653000077,
+      "surname": "Zikirova222",
+      "name": "Jumagul222",
+      "waste": "Полиэтилен",
+      "amount": "222",
+      "note": "222"
+    },
+    {
+      "id": 1599713280621,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Макулатура",
+      "amount": "5",
+      "note": ""
+    },
+    {
+      "id": 1599793939603,
+      "surname": "HI",
+      "name": "HI",
+      "waste": "Полиэтилен",
+      "amount": "12",
+      "note": ""
+    },
+    {
+      "id": 1599795446252,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Полиэтилен",
+      "amount": "5",
+      "note": "qwert"
+    },
+    {
+      "id": 1599795538154,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Стекло",
+      "amount": "5",
+      "note": "qweqwe"
+    },
+    {
+      "id": 1599795577477,
+      "surname": "Zikirova",
+      "name": "fgf",
+      "waste": "Стекло",
+      "amount": "5",
+      "note": "qweqw"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
