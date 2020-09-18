@@ -5,6 +5,7 @@ import './Body.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
 function Body() {
     AOS.init();
     const history = useHistory();
@@ -16,7 +17,7 @@ function Body() {
                     data-aos-duration="1500" 
                     className="waste"
                 >
-                    <img className="img-waste " alt="#" src="https://images.unsplash.com/photo-1585119192228-f072c53bc55c?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"/>
+                    <img className="img-waste" alt="#" src="https://images.unsplash.com/photo-1585119192228-f072c53bc55c?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"/>
                     <Button className="btn-waste" onClick={()=>history.replace("/application")}>Сдать отходы</Button>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1500" className='waste'>

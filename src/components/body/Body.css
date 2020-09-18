@@ -12,6 +12,7 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
+    position: relative;
 }
 .img-sorts, .img-res {
     position: absolute;
@@ -23,11 +24,11 @@
 
 .btn-waste {
     position: absolute;
-    top: 400px;
-    left: 650px;
+    top: 500px;
+    left: 600px;
     display: inline-block;
     color: black;
-    font-size: 125%;
+    font-size: 180%;
     font-weight: 700;
     text-decoration: none;
     user-select: none;
@@ -38,6 +39,27 @@
     background-color: white;
     border: none;
     opacity: 0.6;
+    height: 80px;
+    width: 300px;
+    font-size: 24px;
+    box-shadow: black;
+    animation: pulse-white 2s infinite;
+}
+@keyframes pulse-white {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }
 
 .btn-waste:hover {

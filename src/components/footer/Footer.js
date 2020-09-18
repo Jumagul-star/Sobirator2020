@@ -6,7 +6,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className="footer-container text-light bg-dark p-5">
+        <div className="footer-container text-light bg-dark p-5 shadow-lg">
         {/* <div className="footer-links">
             <div className="footer-link-wrapper">
             <div className="footer-link-items">
@@ -66,7 +66,10 @@ function Footer() {
             </Link>
         </div> */}
         <div className='d-flex justify-content-center'>
-            <small className="website-rights">Copyright © 2020 ecoFriday. All Rights Reserved</small>
+            <small className="website-rights">
+                <p>При поддержке Makers Coding Bootcamp Bishkek</p>
+                Copyright © 2020 ecoFriday. All Rights Reserved
+            </small>
         </div>
         {/* </Row> */}
         

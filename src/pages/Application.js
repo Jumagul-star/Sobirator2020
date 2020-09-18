@@ -5,13 +5,16 @@ import Axios from 'axios';
 import { connect } from 'react-redux';
 import { addNewApplication } from '../redux/actions';
 import { isAuthUser } from '../helpers/authFunctions';
+import Map from './Map';
 
 function Application(props) {
     const [surname, setSurname] = useState('');
     const [name, setName] = useState('');
     const [waste, setWaste] = useState('');
     const [amount, setAmount] = useState('');
-    const [note, setNote] = useState('');
+    const [address, setAddress] = useState('');
+    const [number, setNumber] = useState('');
+    const [admin, setAdmin] = useState('');
     const history = useHistory();
     // const [alert, setAlert] = useState(false);
 
@@ -33,18 +36,22 @@ function Application(props) {
             name,
             waste,
             amount,
-            note,
+            address,
+            number,
+            admin: false
         }
         console.log(data)
-        if (surname !== '' && name !== '' && waste !== '' && amount !== '') {
+        if (surname !== '' && name !== '' && amount !== '' && waste !== '') {
             (async function () {
-                await Axios.post(`${url}/posts`, data)
+                await Axios.post(`${url}/posts?admin=false`, data)
                 props.addNewApplication(data)
                 setSurname('')
                 setName('')
                 setWaste('')
                 setAmount('')
-                setNote('')
+                setAddress('')
+                setNumber('')
+                setAdmin('')
             }())
         }
         history.push('/')
@@ -52,7 +59,8 @@ function Application(props) {
     }
     if(!isAuthUser())return <Redirect to="/auth/login"/>
     return (
-        <div style={{background: 'url(https://images.unsplash.com/photo-1532300481631-0bc14f3b7699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)'}}>
+        <div 
+        style={{background: 'url(https://images.unsplash.com/photo-1532300481631-0bc14f3b7699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)'}}>
             <Container>
                 {/* <Toaster style={{top: '950px', width: '400px', left: '850px'}} isOpen={alert}>
                     Ваша заявка успешно отправлена!
@@ -91,6 +99,18 @@ function Application(props) {
                                     </FormGroup>
                                     <FormGroup>
                                         <Label className='text-danger'>*</Label>  {' '}
+                                        <Label  for="exampleEmail">Номер телефона</Label>
+                                        <Input 
+                                            required
+                                            // type="number" 
+                                            name="number" 
+                                            id="number"
+                                            value={number}
+                                            onChange={(e) => setNumber(e.target.value)}
+                                        />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Label className='text-danger'>*</Label>  {' '}
                                         <Label for="exampleSelect">Вид вторичного сырья</Label>
                                         <Input 
                                             required
@@ -100,11 +120,12 @@ function Application(props) {
                                             value={waste}
                                             onChange={(e) => setWaste(e.target.value)}
                                         >
-                                        <option>Пластиковые бутылки</option>
-                                        <option>Стекло</option>
-                                        <option>Макулатура</option>
-                                        <option>Полиэтилен</option>
-                                        <option>Электроника</option>
+                                            <option> </option>
+                                            <option>Пластиковые бутылки</option>
+                                            <option>Стекло</option>
+                                            <option>Макулатура</option>
+                                            <option>Полиэтилен</option>
+                                            <option>Электроника</option>
                                         </Input>
                                     </FormGroup>
                                     <FormGroup>
@@ -113,8 +134,8 @@ function Application(props) {
                                         <Input 
                                             required
                                             type="text" 
-                                            name="quantity" 
-                                            id="quantity" 
+                                            name="amount" 
+                                            id="amount" 
                                             value={amount}
                                             onChange={(e) => setAmount(e.target.value)}
                                         />
@@ -126,10 +147,11 @@ function Application(props) {
                                             type="textarea" 
                                             name="text" 
                                             id="exampleText" 
-                                            value={note}
-                                            onChange={(e) => setNote(e.target.value)}
+                                            value={address}
+                                            onChange={(e) => setAddress(e.target.value)}
                                         />
                                     </FormGroup>
+                                    <Map/>
                                     <FormGroup>
                                         <Label for="exampleFile">Фото</Label>
                                         <Input type="file" name="file" id="exampleFile" />
@@ -141,7 +163,7 @@ function Application(props) {
                                         <legend>Выбор времени</legend>
                                         <FormGroup check>
                                         <Label check>
-                                            <Input type="radio" name="radio1" />{' '}
+                                            <Input type="radio" name="radio1"/>{' '}
                                             В  любое время
                                         </Label>
                                         </FormGroup>
@@ -151,7 +173,7 @@ function Application(props) {
                                             В первой половине дня (до 12:00)
                                         </Label>
                                         </FormGroup>
-                                        <FormGroup check disabled>
+                                        <FormGroup check>
                                         <Label check>
                                             <Input type="radio" name="radio1"/>{' '}
                                             Во второй половине дня(12:00 - 21:00)

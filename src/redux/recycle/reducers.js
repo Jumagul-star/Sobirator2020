@@ -3,7 +3,7 @@ import {
     ADD_NEW_APPLICATION, 
     FETCH_DATA, 
     FETCH_DATA_SUCCESS, 
-    FETCH_DATA_FAILED 
+    FETCH_DATA_FAILED, DELETE_APPLICATION, EDIT_APPLICATION 
 } from './constants';
 
 const INIT_STATE = {
@@ -13,7 +13,7 @@ const INIT_STATE = {
     data: [],
 }
 
-const ApplicationReducer = (state = INIT_STATE, action) => {
+const RecycleReducer = (state = INIT_STATE, action) => {
     switch(action.type) {
         case FETCH_DATA:
             return {...state, loading: true};
@@ -23,9 +23,17 @@ const ApplicationReducer = (state = INIT_STATE, action) => {
             return {...state, loading: false, err: action.payload}
         case ADD_NEW_APPLICATION:
             return {...state, applications: [...state.applications, action.payload]}
+        case DELETE_APPLICATION:
+            return {...state, applications: state.applications.filter(
+                item => item.id === action.payload.id ? action.payload : item
+            )}
+        case EDIT_APPLICATION:
+            return {...state, applications: state.applications.map(
+                item => item.id === action.payload.id ? action.payload : item
+            )}
         default:
             return state
     }
 }
 
-export default ApplicationReducer;
+export default RecycleReducer;

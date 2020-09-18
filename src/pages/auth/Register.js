@@ -9,13 +9,16 @@ function Register() {
         history.replace('/auth/login')
     }
     return (
-        <div>
+        <div style={{ background: 'url(https://images.unsplash.com/photo-1560190356-3c4e8a38d9ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1869&q=80)' }}>
             <Container>
-                <Row>
-                    <Col>
-                        <Card>
-                            <CardBody>
-                                <form>
+                <Row 
+                    style={{ height: '100vh' }}
+                    className='justify-content-center align-items-center'
+                >
+                    <Col md={8}>
+                        <Card className='shadow'>
+                            <CardBody className="d-flex justify-content-around">
+                                <form className='col-md-6'>
                                     <h2>Регистрация</h2>
                                     <Label htmlFor='email'>Адрес электронной почты: </Label>
                                     <Input 
@@ -32,12 +35,13 @@ function Register() {
                                         id='repeat_password'
                                         name='repeat_password'
                                     />
-                                    <ButtonGroup>
+                                    <ButtonGroup className='mt-3'>
                                         <Button
                                             type='submit'
+                                            color='success'
                                             >Регистрация
                                         </Button>
-                                        <Button onClick={handleBack}>Назад</Button>
+                                        <Button color='danger' onClick={handleBack}>Назад</Button>
                                     </ButtonGroup>
                                 </form>
                             </CardBody>
